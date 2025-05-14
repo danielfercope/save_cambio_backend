@@ -13,7 +13,7 @@ Este é o back-end de um aplicativo de conversão de moedas em tempo real, desen
 - [dotenv v16.4.5](https://www.npmjs.com/package/dotenv) – Carrega variáveis de ambiente a partir de um arquivo `.env`.
 - [cors v2.8.5](https://www.npmjs.com/package/cors) – Middleware para permitir requisições entre diferentes origens (CORS).
 
-
+Impotante: para funcionamento integral é necessário um arquivo .env na raiz do projeto contendo os valores requeridos.
 ---
 
 ## 🚀 Como Executar o Projeto
