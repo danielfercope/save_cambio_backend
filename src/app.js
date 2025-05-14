@@ -4,9 +4,17 @@ const cors = require('cors');
 
 const app = express();
 
+const allowedOrigins = ['http://localhost:5173', 'https://save-cambio-frontend.vercel.app/'];
+
 app.use(cors({
-  origin: 'https://save-cambio-frontend.vercel.app/' 
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(new Error('Not allowed by CORS'));
+  }
 }));
+
 
 app.use(express.json());
 
