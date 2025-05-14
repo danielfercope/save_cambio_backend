@@ -21,16 +21,11 @@ Este é o back-end de um aplicativo de conversão de moedas em tempo real, desen
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio-backend.git
-cd seu-repositorio-backend
+git clone https://github.com/danielfercope/save_cambio_backend.git
+cd save_cambio_backend
 
 ### Passo 2: Instale as dependências do projeto utilizando npm.
-
-```bash
-cd save_cambio
 npm install
 
 ### Passo 3: Inicie o projeto.
-
-```bash
 npm start
