@@ -1,10 +1,10 @@
-# 💱 Conversor de Moedas - Backend
+# Conversor de Moedas - Backend
 
 Este é o back-end de um aplicativo de conversão de moedas em tempo real, desenvolvido com **Node.js** e **Express**. Ele se conecta a uma API de câmbio para obter as taxas atuais e armazena um histórico local das conversões realizadas.
 
 ---
 
-## 📦 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - [Node.js v18.x](https://nodejs.org/) – Plataforma para execução do JavaScript no backend.
 - [Express v4.18.2](https://expressjs.com/) – Framework para criação de APIs web rápidas e minimalistas.
@@ -16,7 +16,7 @@ Este é o back-end de um aplicativo de conversão de moedas em tempo real, desen
 Impotante: para funcionamento integral é necessário um arquivo .env na raiz do projeto contendo os valores requeridos.
 ---
 
-## 🚀 Como Executar o Projeto
+## Como Executar o Projeto
 
 ### 1. Clone o repositório
 
