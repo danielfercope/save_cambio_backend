@@ -4,8 +4,10 @@ const cors = require('cors');
 
 const app = express();
 
-const allowedOrigins = ['http://localhost:5173', 'https://save-cambio-frontend.vercel.app/'];
-
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://save-cambio-frontend.vercel.app'
+];
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin || allowedOrigins.includes(origin)) {
