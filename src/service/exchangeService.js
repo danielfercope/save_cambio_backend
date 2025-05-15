@@ -2,16 +2,13 @@ const axios = require('axios');
 const NodeCache = require('node-cache');
 const cache = new NodeCache({ stdTTL: 3600 });
 
-// Histórico em memória
 const conversionHistory = [];
 
 exports.convertCurrency = async (from, to, amount) => {
   let rates = cache.get(from);
 
   if (!rates) {
-    const response = await axios.get(
-      `${process.env.EXCHANGE_API_URL}/${process.env.EXCHANGE_API_KEY}/latest/${from}`
-    );
+    const response = await axios.get(`${process.env.EXCHANGE_API_URL}/${process.env.EXCHANGE_API_KEY}/latest/${from}`);
 
     if (response.data.result !== 'success') {
       const error = new Error('Falha ao obter taxas de câmbio da API externa.');
@@ -31,20 +28,11 @@ exports.convertCurrency = async (from, to, amount) => {
   }
 
   const converted = (amount * rate).toFixed(2);
-
-  // Adiciona ao histórico
-  conversionHistory.push({
-    timestamp: new Date().toISOString(),
-    from,
-    to,
-    amount,
-    rate,
-    converted
-  });
-
-  return { from, to, amount, converted, rate };
+  const conversion = { from, to, amount, converted, rate, date: new Date().toISOString() };
+  conversionHistory.push(conversion);
+  return conversion;
 };
 
 exports.getConversionHistory = () => {
-  return [...conversionHistory].reverse();  
+  return conversionHistory;
 };

@@ -21,16 +21,11 @@ exports.convert = async (req, res) => {
   }
 };
 
-exports.getHistory = async (req, res) => {  
+exports.getHistory = async (req, res) => {
   try {
     const history = exchangeService.getConversionHistory();
-    console.log('Histórico atual:', history);  
-    res.json(history || []);  
+    res.json(history);
   } catch (error) {
-    console.error('Erro no histórico:', error);
-    res.status(500).json({ 
-      error: 'Erro ao buscar histórico de conversões.',
-      details: error.message 
-    });
+    res.status(500).json({ error: 'Erro ao buscar histórico' });
   }
 };
